@@ -10,5 +10,8 @@ for (i = 0; i < 4; i++){
         let gridDiv = document.createElement("div");
         gridDiv.classList.add("gridDiv");
         smallContainer.appendChild(gridDiv);
+        gridDiv.addEventListener ("mouseenter", () => {
+            gridDiv.style.backgroundColor ="blue";
+        })
     }
 }
