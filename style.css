@@ -2,3 +2,14 @@ h1 {
     text-align: center;
     text-decoration:underline;
 }
+
+#container{
+    border: 1px solid black;
+    width: 98vw;
+    height: 90vh;
+    display: flex;
+}
+
+.gridDiv {
+    border: 1px dotted blue;
+}
