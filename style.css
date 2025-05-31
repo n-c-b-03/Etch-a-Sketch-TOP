@@ -4,12 +4,19 @@ h1 {
 }
 
 #container{
-    border: 1px solid black;
+    border: 2px solid black;
     width: 98vw;
     height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.smallContainer {
+    flex: 1;
     display: flex;
 }
 
 .gridDiv {
-    border: 1px dotted blue;
+    flex: 1;
+    border: 1px solid rgba(201, 196, 196, 0.5);
 }
