@@ -10,6 +10,11 @@ function createGrid () {
     };
 
     let num = input.value;
+    if (num > 100 || num <=0){
+        alert("You can only use numbers between 1 and 100");
+        return;
+    };
+
     for (i = 0; i < num; i++){
         let smallContainer = document.createElement("div");
         smallContainer.classList.add("smallContainer");
