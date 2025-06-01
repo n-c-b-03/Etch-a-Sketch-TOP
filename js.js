@@ -4,6 +4,8 @@ const btn = document.querySelector("button");
 
 let num = input.value;
 
+// btn.addEventListener("click", ); Add function of deleting old grid and creating new one using num
+
 for (i = 0; i < 4; i++){
     let smallContainer = document.createElement("div");
     smallContainer.classList.add("smallContainer");
@@ -13,9 +15,7 @@ for (i = 0; i < 4; i++){
         let gridDiv = document.createElement("div");
         gridDiv.classList.add("gridDiv");
         smallContainer.appendChild(gridDiv);
-        gridDiv.addEventListener ("mouseenter", () => {
-            gridDiv.style.backgroundColor = "blue";
-        })
+        gridDiv.addEventListener ("mouseenter", () => gridDiv.style.backgroundColor = "blue")
     }
 }
 
