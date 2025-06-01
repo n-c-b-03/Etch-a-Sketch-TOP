@@ -3,10 +3,21 @@ h1 {
     text-decoration:underline;
 }
 
+input {
+    font-size: large;
+    margin-bottom: 20px;
+}
+label {
+    position: absolute;
+    margin: 5px;
+    color:rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+
 #container{
     border: 2px solid black;
     width: 98vw;
-    height: 90vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
 }
