@@ -2,20 +2,24 @@ const container = document.querySelector("#container");
 const input = document.querySelector("input");
 const btn = document.querySelector("button");
 
-let num = input.value;
+btn.addEventListener("click", createGrid); 
 
-// btn.addEventListener("click", ); Add function of deleting old grid and creating new one using num
+function createGrid () {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    };
 
-for (i = 0; i < 4; i++){
-    let smallContainer = document.createElement("div");
-    smallContainer.classList.add("smallContainer");
-    container.appendChild(smallContainer);
+    let num = input.value;
+    for (i = 0; i < num; i++){
+        let smallContainer = document.createElement("div");
+        smallContainer.classList.add("smallContainer");
+        container.appendChild(smallContainer);
 
-    for (j = 0; j < 4; j++){
-        let gridDiv = document.createElement("div");
-        gridDiv.classList.add("gridDiv");
-        smallContainer.appendChild(gridDiv);
-        gridDiv.addEventListener ("mouseenter", () => gridDiv.style.backgroundColor = "blue")
+        for (j = 0; j < num; j++){
+            let gridDiv = document.createElement("div");
+            gridDiv.classList.add("gridDiv");
+            smallContainer.appendChild(gridDiv);
+            gridDiv.addEventListener ("mouseenter", () => gridDiv.style.backgroundColor = "blue")
+        }
     }
 }
-
