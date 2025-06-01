@@ -1,5 +1,8 @@
 const container = document.querySelector("#container");
+const input = document.querySelector("input");
+const btn = document.querySelector("button");
 
+let num = input.value;
 
 for (i = 0; i < 4; i++){
     let smallContainer = document.createElement("div");
@@ -11,7 +14,7 @@ for (i = 0; i < 4; i++){
         gridDiv.classList.add("gridDiv");
         smallContainer.appendChild(gridDiv);
         gridDiv.addEventListener ("mouseenter", () => {
-            gridDiv.style.backgroundColor ="blue";
+            gridDiv.style.backgroundColor = "blue";
         })
     }
 }
