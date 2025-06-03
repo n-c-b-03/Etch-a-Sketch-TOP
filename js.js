@@ -24,11 +24,16 @@ function createGrid () {
             smallContainer.appendChild(gridDiv);
             gridDiv.style.opacity = "0";
 
-            gridDiv.addEventListener ("mouseenter", function () {
+            gridDiv.addEventListener ("mouseenter", function () {   
+                let r = Math.floor(Math.random() * (255 - 50 + 1) + 50);
+                let g = Math.floor(Math.random() * (255 - 50 + 1) + 50);
+                let b = Math.floor(Math.random() * (255 - 50 + 1) + 50);
+                console.log(r, g, b);
+                gridDiv.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+
                 let opacityString = window.getComputedStyle(gridDiv).getPropertyValue("opacity");
                 let opacity = +opacityString;
-                console.log (opacity);
-                gridDiv.style.backgroundColor = `rgb(0, 0, 255)`;
                 gridDiv.style.opacity = `${opacity+0.1}`;
             })
         }
