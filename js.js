@@ -13,7 +13,6 @@ function createGrid () {
         return;
     };
 
-    let numHovered = 0;
     for (i = 0; i < num; i++){
         let smallContainer = document.createElement("div");
         smallContainer.classList.add("smallContainer");
@@ -23,17 +22,16 @@ function createGrid () {
             let gridDiv = document.createElement("div");
             gridDiv.classList.add("gridDiv");
             smallContainer.appendChild(gridDiv);
-            // gridDiv.addEventListener ("mouseenter", () => gridDiv.style.backgroundColor = "blue")
+            gridDiv.style.opacity = "0";
+
             gridDiv.addEventListener ("mouseenter", function () {
-                numHovered++;
-                let alpha = 0.1 * numHovered;
-                gridDiv.style.backgroundColor = `rgba(0, 0, 255, ${alpha})`;
-                if (numHovered === 10){
-                    numHovered = 0;
-                }
+                let opacityString = window.getComputedStyle(gridDiv).getPropertyValue("opacity");
+                let opacity = +opacityString;
+                console.log (opacity);
+                gridDiv.style.backgroundColor = `rgb(0, 0, 255)`;
+                gridDiv.style.opacity = `${opacity+0.1}`;
             })
         }
     }
 }
-
 btn.addEventListener("click", createGrid); 
