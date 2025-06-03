@@ -2,8 +2,6 @@ const container = document.querySelector("#container");
 const input = document.querySelector("input");
 const btn = document.querySelector("button");
 
-btn.addEventListener("click", createGrid); 
-
 function createGrid () {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
@@ -15,6 +13,7 @@ function createGrid () {
         return;
     };
 
+    let numHovered = 0;
     for (i = 0; i < num; i++){
         let smallContainer = document.createElement("div");
         smallContainer.classList.add("smallContainer");
@@ -24,7 +23,17 @@ function createGrid () {
             let gridDiv = document.createElement("div");
             gridDiv.classList.add("gridDiv");
             smallContainer.appendChild(gridDiv);
-            gridDiv.addEventListener ("mouseenter", () => gridDiv.style.backgroundColor = "blue")
+            // gridDiv.addEventListener ("mouseenter", () => gridDiv.style.backgroundColor = "blue")
+            gridDiv.addEventListener ("mouseenter", function () {
+                numHovered++;
+                let alpha = 0.1 * numHovered;
+                gridDiv.style.backgroundColor = `rgba(0, 0, 255, ${alpha})`;
+                if (numHovered === 10){
+                    numHovered = 0;
+                }
+            })
         }
     }
 }
+
+btn.addEventListener("click", createGrid); 
